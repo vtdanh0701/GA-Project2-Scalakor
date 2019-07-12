@@ -1,27 +1,26 @@
-# Express Authentication
+# GA Project 2 - Scalakor
+In this project I'm making an app that let user pick a chord and display all the useful information about that chord (arp,scale can go well with ...)
 
-Express authentication template using Passport + flash messages + custom middleware
+## Motivation 
+I always find my self and my piano student trouble looking for the right scale to improvise over a chord, so I made this app to help us. 
 
-## Getting Started
+## Tech/Framework Used
+VexFlow !!
+Node
+Express
+Javascript
+Sequelize 
 
-#### Scaffold w/tests (see `master` branch)
+## API reference 
+https://github.com/0xfe/vexflow.git
 
-* Run `npm install` to install dependencies
-  * Use `npm run lint:js` to lint your JS
-  * Use `npm run lint:css` to lint your CSS
-  * Use `npm test` to run tests
-* Setup the databases
-  * Change the database names in `config/config.json` to reflect your project
-  * Run `createdb project_name_development` to create the development database
-  * Run `createdb project_name_test` to create the test database
+## Issues 
+Flash() and auth route doesn't work properly
+Small database right now
 
-#### Finished version (see `brian-finished` branch)
+## Next plan 
+Add more chords,scale and licks to database
+Fix the authentication 
+Add some styling 
+Give the user the ability to input note ( maybe through musicXml)
 
-* Run `npm install` to install dependencies
-  * Use `npm run lint:js` to lint your JS
-  * Use `npm run lint:css` to lint your CSS
-  * Use `npm test` to run tests
-* Setup the databases
-  * Run `createdb express_auth_development` to create the development database
-  * Run `createdb express_auth_test` to create the test database
-  * Run `sequelize db:migrate` to run migrations
