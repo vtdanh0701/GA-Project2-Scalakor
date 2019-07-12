@@ -1,0 +1,124 @@
+<a href="/chords">Home</a> |
+<a href="/profile">Profile</a> | 
+<a href="/auth/logout">Log Out</a>
+<hr>
+<h1>Everything about <%=chord.root%><%=chord.type%><%=chord.ext%> Chord</h1>
+<form action="/chords/detail" method='POST'>
+<input type="hidden" value="<%=chord.id%>" name="chordId">
+<input type="submit" value='Add This Chord To Your Collection'>
+</form>
+<script src="https://unpkg.com/vexflow/releases/vexflow-min.js"></script>
+
+<h3><%=chord.root%><%=chord.type%><%=chord.ext%> Chord</h3>
+<div id="chord">
+</div>
+<script>
+var VF = Vex.flow;
+var vf = new Vex.Flow.Factory({
+  renderer: {elementId: 'chord', width: 1100, height: 100}
+});
+var score = vf.EasyScore();
+var x = 120;
+var y = 0;
+function makeSystem(width) {
+        var system = vf.System({ x: x, y: y, width: width, spaceBetweenStaves: 10 });
+        x += width;
+        return system;
+      }
+
+var system = makeSystem(220)
+    system.addStave({
+  voices: [ 
+    score.voice(score.notes('<%=chord.note%>'))
+  ]
+}).addClef('treble').addTimeSignature('4/4');
+
+vf.draw()
+
+</script>
+
+<h3><%=arp.name%></h3>
+<div id='arp'></div>
+<script>
+var VF = Vex.flow;
+var vf = new Vex.Flow.Factory({
+  renderer: {elementId: 'arp', width: 1100, height: 150}
+});
+var score = vf.EasyScore();
+var x = 120;
+var y = 20;
+function makeSystem(width) {
+        var system = vf.System({ x: x, y: y, width: width, spaceBetweenStaves: 10 });
+        x += width;
+        return system;
+      }
+
+score.set({ time: '6/8' });
+
+system = makeSystem(250)
+    system.addStave({
+  voices: [
+    score.voice(
+      score.beam(score.notes('<%=arp.note1%>', {stem: 'up'}))
+        .concat(
+        score.beam(score.notes('<%=arp.note2%>')))
+    )
+  ]
+}).addClef('treble').addTimeSignature('6/8');
+
+system = makeSystem(220)
+    system.addStave({
+  voices: [
+    score.voice(
+      score.beam(score.notes('<%=arp.note3%>'))
+        .concat(
+        score.beam(score.notes('<%=arp.note4%>', {stem: 'up'})))
+    )
+  ]
+});
+system = makeSystem(100)
+system.addStave({
+    voices: [
+        score.voice(score.notes('<%=arp.note5%>'))
+    ]
+})
+
+vf.draw()
+
+</script>
+
+<h2>We can use these scales for this chord :</h2>
+
+<%scales.forEach(function(scale){%>
+    <h3><%=scale.name%></h3>
+    <div id=<%=scale.id%>></div>
+    <script>
+var VF = Vex.flow;
+var vf = new Vex.Flow.Factory({
+  renderer: {elementId: '<%=scale.id%>', width: 1100, height: 150}
+});
+var score = vf.EasyScore();
+var x = 120;
+var y = 20;
+function makeSystem(width) {
+        var system = vf.System({ x: x, y: y, width: width, spaceBetweenStaves: 10 });
+        x += width;
+        return system;
+      }
+
+score.set({ time: '8/1' });
+
+system = makeSystem(500)
+    system.addStave({
+  voices: [
+    score.voice(
+      score.notes('<%=scale.note%>'))
+  ]
+}).addClef('treble')
+
+
+
+vf.draw()
+
+</script>
+<%})%>

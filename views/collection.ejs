@@ -1,0 +1,12 @@
+<a href="/chords">Home</a> |
+<a href="/profile">Profile</a> | 
+<a href="/auth/logout">Log Out</a>
+<hr>
+<h1>This is your collection</h1>
+<%user.chords.forEach(function(chord){%>
+    <a href="/chords/detail"><h3><%=chord.root%><%=chord.type%><%=chord.ext%></h3></a>
+    <form action="/profile/collection/<%=chord.id%>?_method=DELETE" method='POST'>
+    <input type="submit" value='Remove This Chord'>
+    <hr>
+    </form>
+<%})%>
