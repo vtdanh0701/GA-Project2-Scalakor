@@ -1,24 +1,26 @@
-<a href="/chords">Home</a> |
-<a href="/profile">Profile</a> | 
-<a href="/auth/logout">Log Out</a>
-<hr>
+<head>
+  <link rel="stylesheet" href="/css/chord-detail.css">
+</head>
+<div class='detail-container'>
 <h1>Everything about <%=chord.root%><%=chord.type%><%=chord.ext%> Chord</h1>
 <form action="/chords/detail" method='POST'>
 <input type="hidden" value="<%=chord.id%>" name="chordId">
 <input type="submit" value='Add This Chord To Your Collection'>
 </form>
 <script src="https://unpkg.com/vexflow/releases/vexflow-min.js"></script>
-
-<h3><%=chord.root%><%=chord.type%><%=chord.ext%> Chord</h3>
-<div id="chord">
+<div class='chord-container'>
+    <h3><%=chord.root%><%=chord.type%><%=chord.ext%> Chord</h3>
+    <div id="chord">
+    </div>
 </div>
+
 <script>
 var VF = Vex.flow;
 var vf = new Vex.Flow.Factory({
   renderer: {elementId: 'chord', width: 1100, height: 100}
 });
 var score = vf.EasyScore();
-var x = 120;
+var x = 0;
 var y = 0;
 function makeSystem(width) {
         var system = vf.System({ x: x, y: y, width: width, spaceBetweenStaves: 10 });
@@ -36,17 +38,19 @@ var system = makeSystem(220)
 vf.draw()
 
 </script>
+<div class="chord-container">
+    <h3><%=arp.name%></h3>
+    <div id='arp'></div>
+</div>
 
-<h3><%=arp.name%></h3>
-<div id='arp'></div>
 <script>
 var VF = Vex.flow;
 var vf = new Vex.Flow.Factory({
   renderer: {elementId: 'arp', width: 1100, height: 150}
 });
 var score = vf.EasyScore();
-var x = 120;
-var y = 20;
+var x = 0;
+var y = 30;
 function makeSystem(width) {
         var system = vf.System({ x: x, y: y, width: width, spaceBetweenStaves: 10 });
         x += width;
@@ -90,16 +94,19 @@ vf.draw()
 <h2>We can use these scales for this chord :</h2>
 
 <%scales.forEach(function(scale){%>
+  <div class='chord-container'>
     <h3><%=scale.name%></h3>
     <div id=<%=scale.id%>></div>
+  </div>
+    
     <script>
 var VF = Vex.flow;
 var vf = new Vex.Flow.Factory({
   renderer: {elementId: '<%=scale.id%>', width: 1100, height: 150}
 });
 var score = vf.EasyScore();
-var x = 120;
-var y = 20;
+var x = 0;
+var y = 0;
 function makeSystem(width) {
         var system = vf.System({ x: x, y: y, width: width, spaceBetweenStaves: 10 });
         x += width;
@@ -122,3 +129,4 @@ vf.draw()
 
 </script>
 <%})%>
+</div>

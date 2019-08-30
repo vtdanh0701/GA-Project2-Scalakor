@@ -1,0 +1,20 @@
+.detail-container{
+    background: url('/img/detail-bg.jpg');
+    padding: 4rem 10rem;
+    text-align: center;
+}
+#chord, #arp{
+    
+    padding: 0;
+    align-items: center;
+}
+.chord-container{
+    margin-bottom: 20px;
+    margin-left: 8rem;
+    text-align: left;
+    border-bottom: 1px dotted #333;
+}
+.chord-container h3{
+    padding: 0;
+    margin: 5px 0;
+}
