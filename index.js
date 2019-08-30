@@ -98,7 +98,9 @@ app.delete('/profile/collection/:id', function(req,res){
 app.put('/profile/:id',function(req, res){
   var id = parseInt(req.params.id);    
   db.user.update({
-      bio: req.body.bio
+      bio: req.body.bio,
+      name: req.body.name,
+      email: req.body.email
   },{
       where:{
           id: id

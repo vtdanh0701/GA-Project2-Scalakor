@@ -1,0 +1,28 @@
+body{
+    background: url('/img/detail-bg.jpg')
+}
+.profile-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border: 1px solid #333;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px 5px #333;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    width: 360px;
+}
+.info, .node{
+    display: flex;
+    align-items: center;
+
+}
+.info{
+    flex-direction: column;
+    border-bottom: 1px dotted #333;
+}
+.node{
+    justify-content: space-between;
+    width: 100%;
+}

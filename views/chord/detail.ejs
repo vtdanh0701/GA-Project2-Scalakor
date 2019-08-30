@@ -3,10 +3,7 @@
 </head>
 <div class='detail-container'>
 <h1>Everything about <%=chord.root%><%=chord.type%><%=chord.ext%> Chord</h1>
-<form action="/chords/detail" method='POST'>
-<input type="hidden" value="<%=chord.id%>" name="chordId">
-<input type="submit" value='Add This Chord To Your Collection'>
-</form>
+
 <script src="https://unpkg.com/vexflow/releases/vexflow-min.js"></script>
 <div class='chord-container'>
     <h3><%=chord.root%><%=chord.type%><%=chord.ext%> Chord</h3>
@@ -129,4 +126,8 @@ vf.draw()
 
 </script>
 <%})%>
+<form action="/chords/detail" method='POST'>
+<input type="hidden" value="<%=chord.id%>" name="chordId">
+<button>Add to your collection</button>
+</form>
 </div>

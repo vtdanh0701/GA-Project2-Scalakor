@@ -1,13 +1,36 @@
-<a href="/chords">Home</a> | 
-<a href="/auth/logout">Log Out</a>
-<h2>Your Profile</h2>
-<p>Hello, <%= currentUser.name%></p>
-<h3>Bio</h3>
-<p><%=currentUser.bio%></p>
-<h4>Update your Bio</h4>
+<head>
+    <link rel="stylesheet" href="/css/profile.css">
+</head>
+<div class="profile-container">
+<h1>Hello, <%= currentUser.name%> !</h1>
+<div class="info">
+        <div class="node">
+            <h2>Email</h2>
+            <p><%=currentUser.email%></p>
+        </div>
+        <div class="node">
+            <h2>Your Bio</h2>
+            <p><%=currentUser.bio%></p>
+        </div> 
+</div>
+
+<h3>Update your Profile</h3>
 <form action="/profile/<%=currentUser.id%>/?_method=PUT" method='POST'>
-<input type="text" name='bio' >
-<input type="submit" value="Update" >
+    <div class='node'>
+            <h2>Name</h2>
+            <input type="text" name='name' placeholder=<%=currentUser.name%>>
+    </div>
+    
+    <div class="node">
+            <h2>Email</h2>
+            <input type="text" name='email' placeholder=<%=currentUser.email%> >
+    </div>
+    <div class="node">
+            <h2>Bio</h2>
+            <input type="text" name='bio' >
+        </div>
+    <input type="submit" value='Update'>
 </form>
 <a href="/profile/collection">View your collection</a>
+</div>
 

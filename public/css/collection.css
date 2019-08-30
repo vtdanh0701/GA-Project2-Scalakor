@@ -1,0 +1,36 @@
+body{
+    background: url('/img/detail-bg.jpg')
+}
+.collection-container{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    
+
+}
+.collection-container div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+}
+.collection-container div a{
+    text-decoration: none;
+    color: #333;
+}
+.collection-container div a:hover{
+    color: red;
+}
+.collection-container div button{
+    color: red;
+    font-family: 'Kreon', serif;
+    background: #fff;
+    color: #333;
+    font-size: 15px;
+    border-radius: 5px;
+}
+.collection-container div button:hover{
+    color: #fff;
+    background: #333;
+}

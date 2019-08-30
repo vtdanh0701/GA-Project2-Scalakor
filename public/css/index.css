@@ -33,20 +33,22 @@ body nav a{
     color: #fff;
     text-decoration: none;
 }
-body nav .signup:hover{
-    background: #fff;
-    color: #04090F;
-}
+
 body nav .form-container{
     font-family: 'Kreon', serif;
     display: flex;
     justify-content: space-between;
-    width: 580px;
     height: 100%;
     font-size: 21px;
     align-items: center;
     margin-right: 20px;
     box-sizing: border-box;
+}
+nav .form-container a{
+    margin: 0 1rem;
+}
+nav .form-container a:hover{
+    color: #DDCFA2
 }
 body nav form{
     display: flex;
@@ -78,7 +80,9 @@ body nav form button{
     opacity: .9;
     letter-spacing: 1rem;
 }
-
+span{
+    margin: 0 10px;
+}
 footer{
     background: #04090F;
     bottom: 0;
