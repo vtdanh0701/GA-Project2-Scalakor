@@ -22,7 +22,7 @@ router.post('/signup', function(req, res) {
     if (created) {
       console.log("user was created, not found");
       passport.authenticate('local', {
-        successRedirect: '/',
+        successRedirect: '/chords',
         successFlash: 'Account created and logged in!'
       })(req, res); //! IMMEDIATELY INVOKED FUNCTION EXPRESSION "IIFE"
     } else {
