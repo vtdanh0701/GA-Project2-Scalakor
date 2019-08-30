@@ -1,5 +1,13 @@
 .alert-danger,.alert-success{
-    top: 30%;
+    position: absolute;
+    top: 12%;
     left: 50%;
     transform: translate(-50%,-50%);
+}
+.alert-danger{
+    background: rgba(255, 0, 0, .7);
+    border-radius: 5px;
+    color: #fff;
+    padding: .5em;
+    font-size: 15px;
 }
