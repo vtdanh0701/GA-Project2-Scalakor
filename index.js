@@ -24,7 +24,6 @@ const sessionStore = new SequelizeStore({
 });
 
 app.set('view engine', 'ejs');
-
 app.use(require('morgan')('dev'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(__dirname + "/public"));
@@ -109,6 +108,8 @@ app.put('/profile/:id',function(req, res){
     res.redirect('/profile')
   })
 })
+
+
 
 app.use('/auth', require('./controllers/auth'));
 app.use('/chords',isLoggedIn, require('./controllers/chord'));
