@@ -44,7 +44,7 @@ router.get('/login', function(req, res) {
 
 //* POST /auth/login - does the authentication... could be google or facebook if we use O-Auth but now we're using login
 router.post('/login', passport.authenticate('local', {
-  failureRedirect: '/auth/login',
+  failureRedirect: '/',
   failureFlash: 'Invalid username and/or password! 👻'
 }), function(req, res) {
   req.session.save(function(err) {
